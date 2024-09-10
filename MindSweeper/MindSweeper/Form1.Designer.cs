@@ -1133,11 +1133,11 @@
             // 
             // button101
             // 
-            this.button101.Location = new System.Drawing.Point(578, 471);
+            this.button101.Location = new System.Drawing.Point(597, 489);
             this.button101.Name = "button101";
-            this.button101.Size = new System.Drawing.Size(75, 23);
+            this.button101.Size = new System.Drawing.Size(105, 43);
             this.button101.TabIndex = 100;
-            this.button101.Text = "button101";
+            this.button101.Text = "RightButton";
             this.button101.UseVisualStyleBackColor = true;
             this.button101.Click += new System.EventHandler(this.button101_Click);
             // 
