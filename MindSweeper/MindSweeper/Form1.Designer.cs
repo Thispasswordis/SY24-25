@@ -129,6 +129,7 @@
             this.button99 = new System.Windows.Forms.Button();
             this.button100 = new System.Windows.Forms.Button();
             this.button101 = new System.Windows.Forms.Button();
+            this.Resetbutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -1141,11 +1142,22 @@
             this.button101.UseVisualStyleBackColor = true;
             this.button101.Click += new System.EventHandler(this.button101_Click);
             // 
+            // Resetbutton
+            // 
+            this.Resetbutton.Location = new System.Drawing.Point(545, 116);
+            this.Resetbutton.Name = "Resetbutton";
+            this.Resetbutton.Size = new System.Drawing.Size(75, 23);
+            this.Resetbutton.TabIndex = 101;
+            this.Resetbutton.Text = "Reset";
+            this.Resetbutton.UseVisualStyleBackColor = true;
+            this.Resetbutton.Click += new System.EventHandler(this.Resetbutton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 608);
+            this.Controls.Add(this.Resetbutton);
             this.Controls.Add(this.button101);
             this.Controls.Add(this.button100);
             this.Controls.Add(this.button99);
@@ -1356,6 +1368,7 @@
         private System.Windows.Forms.Button button99;
         private System.Windows.Forms.Button button100;
         private System.Windows.Forms.Button button101;
+        private System.Windows.Forms.Button Resetbutton;
     }
 }
 

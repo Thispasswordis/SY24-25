@@ -17,13 +17,8 @@ namespace MindSweeper
         public Form1()
         {
             InitializeComponent();
-            
-            for (int i = 0; i < 100; i++)
-            {
-                btnGrid[i] = (Button)Controls["button" + (i + 1)];
-                tileGrid[i] = new Tile (btnGrid[i]);
-                btnGrid[i].BackColor = Color.Green;
-            }
+
+            Reset();
 
         }
         private Button getButton(int r, int c)
@@ -53,8 +48,19 @@ namespace MindSweeper
             b.BackColor = Color.Red;
         }
 
-        
+        private void Resetbutton_Click(object sender, EventArgs e)
+        {
+            Reset();
+        }
 
-        
+        private void Reset()
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                btnGrid[i] = (Button)Controls["button" + (i + 1)];
+                tileGrid[i] = new Tile(btnGrid[i]);
+                btnGrid[i].BackColor = Color.Green;
+            }
+        }
     }
 }
