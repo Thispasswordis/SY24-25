@@ -47,6 +47,11 @@ namespace MindSweeper
             Button b = sender as Button;
             b.BackColor = Color.Red;
         }
+        private void Button_MouseDown(object sender, MouseEventArgs e)
+        {
+            Button b = sender as Button;
+            b.BackColor = Color.Red;
+        }
 
         private void Resetbutton_Click(object sender, EventArgs e)
         {
@@ -59,7 +64,7 @@ namespace MindSweeper
             {
                 btnGrid[i] = (Button)Controls["button" + (i + 1)];
                 tileGrid[i] = new Tile(btnGrid[i]);
-                btnGrid[i].BackColor = Color.Green;
+                
             }
         }
     }
