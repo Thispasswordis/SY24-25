@@ -15,14 +15,21 @@ namespace MindSweeper
         private Boolean m_dug;
         private Boolean m_mine;
         private int m_nearby;
+        private Image m_FlagImage;
         public Tile(Button b)
         {
             m_b = b;
             m_b.BackColor = Color.Green;
         }
+        public void SetFlagImage(Image flagImage) { m_FlagImage = flagImage; }
         public void SetMine(Boolean b) { m_mine = b; }
         public void SetDug(Boolean b) { m_dug = b; }
-        public void SetFlag(Boolean b) { m_flag = b; }
+        public void SetFlag(Boolean b) 
+        {
+            m_flag = b;
+            //m_b.BackColor = Color.Red;
+            m_b.BackgroundImage = m_FlagImage;
+        }
 
     }
 }

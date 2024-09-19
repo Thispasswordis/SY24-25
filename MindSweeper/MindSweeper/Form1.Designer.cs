@@ -130,6 +130,8 @@
             this.button100 = new System.Windows.Forms.Button();
             this.button101 = new System.Windows.Forms.Button();
             this.Resetbutton = new System.Windows.Forms.Button();
+            this.FlagpictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.FlagpictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -1152,11 +1154,23 @@
             this.Resetbutton.UseVisualStyleBackColor = true;
             this.Resetbutton.Click += new System.EventHandler(this.Resetbutton_Click);
             // 
+            // FlagpictureBox
+            // 
+            this.FlagpictureBox.Image = global::MindSweeper.Properties.Resources.MinesweeperFlag;
+            this.FlagpictureBox.Location = new System.Drawing.Point(602, 315);
+            this.FlagpictureBox.Name = "FlagpictureBox";
+            this.FlagpictureBox.Size = new System.Drawing.Size(100, 80);
+            this.FlagpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.FlagpictureBox.TabIndex = 102;
+            this.FlagpictureBox.TabStop = false;
+            this.FlagpictureBox.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 608);
+            this.Controls.Add(this.FlagpictureBox);
             this.Controls.Add(this.Resetbutton);
             this.Controls.Add(this.button101);
             this.Controls.Add(this.button100);
@@ -1261,6 +1275,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.FlagpictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1369,6 +1384,7 @@
         private System.Windows.Forms.Button button100;
         private System.Windows.Forms.Button button101;
         private System.Windows.Forms.Button Resetbutton;
+        private System.Windows.Forms.PictureBox FlagpictureBox;
     }
 }
 
