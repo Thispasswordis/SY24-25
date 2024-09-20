@@ -65,7 +65,8 @@ namespace MindSweeper
                 btnGrid[i] = (Button)Controls["button" + (i + 1)];
                 tileGrid[i] = new Tile(btnGrid[i]);
                 tileGrid[i].SetFlagImage(FlagpictureBox.Image);
-
+                tileGrid[i].SetMineImage(MinepictureBox.Image);
+                tileGrid[i].SetMine(true);
             }
         }
     }
