@@ -26,16 +26,24 @@ namespace MindSweeper
         public void SetMineImage (Image mineImage) { m_MineImage = mineImage; }
         public void SetFlagImage(Image flagImage) { m_FlagImage = flagImage; }
         public void SetMine(Boolean b) 
-        { m_mine = b;
-          m_b.BackgroundImage = m_MineImage;
+        {
+            m_mine = b;
+            m_b.BackgroundImage = m_MineImage;
         }
         public void SetDug(Boolean b) { m_dug = b; }
-        public void SetFlag(Boolean b) 
+        public void SetFlag()
         {
-            m_flag = b;
-            //m_b.BackColor = Color.Red;
-            m_b.BackgroundImage = m_FlagImage;
+            m_flag = !m_flag;
+            if (m_flag)
+            {
+                m_b.BackgroundImage = m_FlagImage;
+            }
+            else
+            {
+                m_b.BackgroundImage=null;
+            }
         }
+            
 
     }
 }

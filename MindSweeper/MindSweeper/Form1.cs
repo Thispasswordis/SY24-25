@@ -50,7 +50,7 @@ namespace MindSweeper
         {
             Button b = sender as Button;
             Tile t = tileGrid[getIndex(b)];
-            t.SetFlag(true);
+            t.SetFlag();
         }
 
         private void Resetbutton_Click(object sender, EventArgs e)
@@ -66,8 +66,15 @@ namespace MindSweeper
                 tileGrid[i] = new Tile(btnGrid[i]);
                 tileGrid[i].SetFlagImage(FlagpictureBox.Image);
                 tileGrid[i].SetMineImage(MinepictureBox.Image);
-                tileGrid[i].SetMine(true);
+                
             }
+        }
+        private void createMines(int numMines)
+        {
+            //until we have enough mines
+            //generate num from 1-100
+            // set mine on that tile if it doesnt already have a mine
+            
         }
     }
 }
