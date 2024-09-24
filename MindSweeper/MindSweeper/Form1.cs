@@ -14,6 +14,7 @@ namespace MindSweeper
     {
         Button[] btnGrid = new Button[100];
         Tile[] tileGrid = new Tile [100];
+        Random Random = new Random();
         public Form1()
         {
             InitializeComponent();
@@ -50,7 +51,10 @@ namespace MindSweeper
         {
             Button b = sender as Button;
             Tile t = tileGrid[getIndex(b)];
-            t.SetFlag();
+            if (e.Button == MouseButtons.Right)
+                t.SetFlag();
+            else 
+                t.SetDug();
         }
 
         private void Resetbutton_Click(object sender, EventArgs e)
@@ -66,15 +70,28 @@ namespace MindSweeper
                 tileGrid[i] = new Tile(btnGrid[i]);
                 tileGrid[i].SetFlagImage(FlagpictureBox.Image);
                 tileGrid[i].SetMineImage(MinepictureBox.Image);
-                
             }
+            createMines(5);
         }
         private void createMines(int numMines)
         {
+            int mineCount = 0;
             //until we have enough mines
-            //generate num from 1-100
-            // set mine on that tile if it doesnt already have a mine
-            
+            while (mineCount < numMines)
+            {
+                //generate num from 1-100
+                int rNum = Random.Next(0, 100);
+
+                // set mine on that tile if it doesnt already have a mine
+                if (tileGrid[rNum].GetMine() == false)
+                {
+                    mineCount++;
+                    tileGrid[rNum].SetMine(true);
+                }
+            }
+
+
+
         }
     }
 }
