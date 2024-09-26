@@ -15,7 +15,7 @@ namespace MindSweeper
         Button[] btnGrid = new Button[100];
         Tile[] tileGrid = new Tile [100];
         Random Random = new Random();
-        public Form1()
+        public Form1()              
         {
             InitializeComponent();
 
@@ -24,7 +24,8 @@ namespace MindSweeper
         }
         private Button getButton(int r, int c)
         {
-            return (Button)getButton(r, c);
+            int idx = (r - 1) * 10 + (c - 1);
+            return btnGrid[idx];
         }
         private int getIndex(Button b)
         {
@@ -34,7 +35,20 @@ namespace MindSweeper
             return retVal-1;
         }
 
-        
+        private void setCounts()
+        {
+            //every tile on the board
+            for (int r = 1; r < 11; r++)
+            {
+                for (int c = 1; c < 11; c++)
+                {
+                    getButton(r, c).BackColor = Color.Honeydew;
+                }
+            } 
+            //add one for each adjacent mine
+            //set the count into the tile
+            
+        }
 
         private void button101_Click(object sender, EventArgs e)
         {
@@ -72,7 +86,10 @@ namespace MindSweeper
                 tileGrid[i].SetMineImage(MinepictureBox.Image);
             }
             createMines(5);
-        }
+            getButton(2, 3).BackColor = Color.Red;
+            int idx = getIndex(getButton(2, 3));
+            btnGrid[idx].BackColor = Color.Yellow; 
+        }        
         private void createMines(int numMines)
         {
             int mineCount = 0;
