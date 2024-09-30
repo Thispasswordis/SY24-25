@@ -50,6 +50,19 @@ namespace MindSweeper
             
         }
 
+        private int countadjacent(int r, int c)
+        {
+            if (r > 0 && c > 0) getButton(r - 1, c - 1).BackColor = Color.Orange;
+            if (r > 0) getButton(r - 1, c).BackColor = Color.Orange;
+            if (r > 0 && c < 10) getButton(r - 1, c + 1).BackColor = Color.Orange;
+            if (c > 0) getButton(r, c - 1).BackColor = Color.Orange;
+            if (r > 0 && c < 10) getButton(r + 1, c - 1).BackColor = Color.Orange;
+            if (r < 10 && c > 0) getButton(r, c + 1).BackColor = Color.Orange;
+            if (r < 10) getButton(r + 1, c).BackColor = Color.Orange;
+            if (r < 10 && c < 10) getButton(r + 1, c + 1).BackColor = Color.Orange;
+            return 0;
+        }
+
         private void button101_Click(object sender, EventArgs e)
         {
             
@@ -86,9 +99,7 @@ namespace MindSweeper
                 tileGrid[i].SetMineImage(MinepictureBox.Image);
             }
             createMines(5);
-            getButton(2, 3).BackColor = Color.Red;
-            int idx = getIndex(getButton(2, 3));
-            btnGrid[idx].BackColor = Color.Yellow; 
+            countadjacent(4, 5);
         }        
         private void createMines(int numMines)
         {
