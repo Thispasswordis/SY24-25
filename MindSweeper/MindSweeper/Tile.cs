@@ -22,15 +22,23 @@ namespace MindSweeper
             m_b = b;
             m_b.BackColor = Color.Green;
         }
-        public void SetNearby(int n) { m_nearby = n; }
+        
+        public void SetNearby(int n) 
+        { 
+            m_nearby = n; 
+            m_b.Text = m_nearby.ToString();
+        }
         public void SetMineImage (Image mineImage) { m_MineImage = mineImage; }
         public void SetFlagImage(Image flagImage) { m_FlagImage = flagImage; }
         public void SetMine(Boolean b) 
         {
             m_mine = b;
+            m_b.BackgroundImage = m_MineImage;
+            m_b.BackColor= Color.Blue;
             
         }
         public Boolean GetMine() { return m_mine; }
+        public Boolean GetFlag() { return m_flag; }
         public void SetDug() 
         { 
             m_dug = true;
