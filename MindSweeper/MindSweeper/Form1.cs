@@ -157,6 +157,10 @@ namespace MindSweeper
                 int r = 0;
                 int c = 0;
                 getRC(b, out r, out c);
+                if (countadjacent(r,c) == countFlags(r,c))
+                {
+                    
+                }
             }
                 
 
